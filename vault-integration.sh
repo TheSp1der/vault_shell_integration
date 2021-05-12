@@ -89,8 +89,7 @@ revoke_token() {
 		--silent \
 		--location \
 		--header "$(printf 'X-Vault-Token: %s' "${VAULT_TOKEN}" )" \
-		--data "$(printf '{ "token": "%s" }' "${VAULT_TOKEN}" )" \
-		"https://${VAULT_API_HOST}:${VAULT_API_PORT}/v1/auth/token/revoke"
+		"https://${VAULT_API_HOST}:${VAULT_API_PORT}/v1/auth/token/revoke-self"
 	unset TOKEN
 }
 
